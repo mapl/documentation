@@ -117,9 +117,10 @@ Deploying Miniflux on Heroku
 Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.com/>`_ in few seconds.
 
 1. Clone the repository on your machine: ``git clone https://github.com/miniflux/miniflux.git``
-2. Create a new Heroku application: ``heroku apps:create``
-3. Add the Postgresql addon: ``heroku addons:create heroku-postgresql:hobby-dev``
-4. Add environment variables to setup the application:
+2. Switch to a stable version, for example ``git checkout 2.0.6`` (master is the development branch)
+3. Create a new Heroku application: ``heroku apps:create``
+4. Add the Postgresql addon: ``heroku addons:create heroku-postgresql:hobby-dev``
+5. Add environment variables to setup the application:
 
 .. code::
 
@@ -131,8 +132,8 @@ Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.
     heroku config:set ADMIN_USERNAME=admin
     heroku config:set ADMIN_PASSWORD=test123
 
-5. Deploy the application on Heroku: ``git push heroku master``
-6. After the application is installed successfully, you don't need these variables anymore:
+6. Deploy the application on Heroku: ``git push heroku master``
+7. After the application is installed successfully, you don't need these variables anymore:
 
 .. code::
 
