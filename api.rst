@@ -4,13 +4,13 @@ REST API
 Authentication
 --------------
 
-The Miniflux API use HTTP Basic authentication.
+The Miniflux API uses HTTP Basic authentication.
 The credentials are the username/password of your account.
 
 Clients
 -------
 
-There are 2 official API clients, one written in Go and another written in Python.
+There are 2 official API clients, one written in Go and another one written in Python.
 
 Golang Client
 ~~~~~~~~~~~~~
@@ -52,7 +52,8 @@ Usage Example:
 Python Client
 ~~~~~~~~~~~~~
 
-Repository: `<https://github.com/miniflux/miniflux-python>`_
+- Repository: `<https://github.com/miniflux/miniflux-python>`_
+- PyPi: `<https://pypi.org/project/miniflux/>`_
 
 Installation:
 
@@ -103,6 +104,8 @@ List of :code:`Client` methods:
 - :code:`create_user(username, password, is_admin)`
 - :code:`update_user(user_id, username=None, password=None, theme=None, language=None, timezone=None, entry_direction=None)`
 - :code:`delete_user(user_id)`
+- :code:`export_feeds()`
+- :code:`import_feeds(opml)`
 
 API Reference
 -------------
@@ -713,9 +716,31 @@ Request:
 
 The response is a XML document (OPML file).
 
-.. note::
+.. note:: This API call is available since Miniflux v2.0.1
 
-    - This API call is available since Miniflux v2.0.1
+OPML Import
+~~~~~~~~~~~
+
+Request:
+
+.. code::
+
+    POST /v1/import
+
+    XML data
+
+- The body is your OPML file (XML).
+- Returns ``201 Created`` if imported successfully.
+
+Response:
+
+.. code:: json
+
+    {
+      "message": "Feeds imported successfully"
+    }
+
+.. note:: This API call is available since Miniflux v2.0.7
 
 Create User
 ~~~~~~~~~~~
