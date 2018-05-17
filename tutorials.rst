@@ -85,7 +85,7 @@ You could use Docker to try quickly Miniflux on your local machine:
 
 Create a ``docker-compose.yml`` file into a folder called ``miniflux`` for example.
 
-.. code::
+.. code:: yaml
 
     version: '3'
     services:
@@ -106,6 +106,10 @@ Create a ``docker-compose.yml`` file into a folder called ``miniflux`` for examp
         environment:
           - POSTGRES_USER=miniflux
           - POSTGRES_PASSWORD=secret
+        volumes:
+          - miniflux-db:/var/lib/postgresql/data
+    volumes:
+      miniflux-db:
 
 Then run ``docker-compose up`` and go to ``http://localhost/``.
 

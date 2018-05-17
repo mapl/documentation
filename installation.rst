@@ -78,6 +78,10 @@ You could also use Docker Compose. Here an example of :code:`docker-compose.yml`
         environment:
           - POSTGRES_USER=miniflux
           - POSTGRES_PASSWORD=secret
+        volumes:
+          - miniflux-db:/var/lib/postgresql/data
+    volumes:
+      miniflux-db:
 
 
 Remember that you still need to run the database migrations and create the first user:
