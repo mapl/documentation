@@ -1,13 +1,13 @@
 Installation Tutorials
 ======================
 
-Here are a couple of tutorials to help you to install Miniflux.
+Here are a couple of tutorials to help you to install Miniflux (They are only examples).
 
 Installing Miniflux on your own server
 --------------------------------------
 
-This example is for **Ubuntu 16.04**.
-Let's say you want to install Miniflux on a VPS.
+Ubuntu 16.04
+''''''''''''
 
 1. Install Postgresql: ``apt install postgresql``
 2. Prepare the database:
@@ -77,6 +77,53 @@ Let's say you want to install Miniflux on a VPS.
     [INFO] Listening on "0.0.0.0:80" without TLS
 
 4. Now, you can access to your Miniflux instance via ``http://your-server/``
+
+Fedora 28
+'''''''''
+
+Database installation and configuration:
+
+1. Install Postgresql: ``sudo dnf install -y postgresql-server postgresql-contrib``
+2. Enable Postgres service: ``sudo systemctl enable postgresql``
+3. Initialize the database: ``sudo postgresql-setup --initdb --unit postgresql``
+4. Start Postgres service: ``sudo systemctl start postgresql``
+5. Create Miniflux database user: ``sudo su - postgres`` and ``createuser -P miniflux``
+6. Create Miniflux database: ``createdb -O miniflux miniflux``
+7. Create HSTORE extension: ``psql miniflux -c 'create extension hstore'``
+
+.. note:: More information available on the `Fedora Wiki <https://fedoraproject.org/wiki/PostgreSQL>`_.
+
+Miniflux installation:
+
+1. Install RPM package:
+
+.. code:: bash
+
+    sudo dnf install https://github.com/miniflux/miniflux/releases/download/2.0.7/miniflux-2.0.7-1.0.x86_64.rpm
+
+2. Run SQL migrations and create first user:
+
+.. code:: bash
+
+    export DATABASE_URL=postgres://miniflux:secret@127.0.0.1/miniflux?sslmode=disable
+
+    # Create database structure:
+    miniflux -migrate
+
+    # Create frist user:
+    miniflux -create-admin
+
+3. Start the service:
+
+.. code:: bash
+
+    systemctl enable miniflux
+    systemctl start miniflux
+
+    # To watch the logs:
+    journalctl -f -u miniflux
+
+5. Access to your Miniflux instance via ``http://your-server:8080/``
 
 Running Miniflux with Docker Compose
 ------------------------------------
