@@ -80,6 +80,9 @@ Usage example:
 
 List of :code:`Client` methods:
 
+- :code:`me()`
+- :code:`export_feeds()`
+- :code:`import_feeds(opml)`
 - :code:`discover(website_url)`
 - :code:`get_feeds()`
 - :code:`get_feed(feed_id)`
@@ -104,8 +107,6 @@ List of :code:`Client` methods:
 - :code:`create_user(username, password, is_admin)`
 - :code:`update_user(user_id, username=None, password=None, theme=None, language=None, timezone=None, entry_direction=None)`
 - :code:`delete_user(user_id)`
-- :code:`export_feeds()`
-- :code:`import_feeds(opml)`
 
 API Reference
 -------------
@@ -416,7 +417,7 @@ Response:
 
 .. note::
 
-    - The field ``comments_url`` is available since version 2.0.5
+    - The field ``comments_url`` is available since Miniflux v2.0.5.
 
 Get Entry
 ~~~~~~~~~
@@ -716,7 +717,7 @@ Request:
 
 The response is a XML document (OPML file).
 
-.. note:: This API call is available since Miniflux v2.0.1
+.. note:: This API call is available since Miniflux v2.0.1.
 
 OPML Import
 ~~~~~~~~~~~
@@ -740,7 +741,7 @@ Response:
       "message": "Feeds imported successfully"
     }
 
-.. note:: This API call is available since Miniflux v2.0.7
+.. note:: This API call is available since Miniflux v2.0.7.
 
 Create User
 ~~~~~~~~~~~
@@ -814,6 +815,33 @@ Response:
 .. note::
 
     - You must be administrator to update users.
+
+Get Current User
+~~~~~~~~~~~~~~~~
+
+Request:
+
+.. code::
+
+    GET /v1/me
+
+Response:
+
+.. code:: json
+
+    {
+        "id": 1,
+        "username": "admin",
+        "is_admin": true,
+        "theme": "default",
+        "language": "en_US",
+        "timezone": "America/Vancouver",
+        "entry_sorting_direction": "desc",
+        "last_login_at": "2018-06-01T19:54:30.723051-07:00",
+        "extra": {}
+    }
+
+.. note:: This API endpoint is available since Miniflux v2.0.8.
 
 Get User
 ~~~~~~~~

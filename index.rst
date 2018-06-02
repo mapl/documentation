@@ -20,7 +20,7 @@ Miniflux is a minimalist and opinionated feed reader.
    cli
    usage
    keyboard_shortcuts
-   integrations
+   integration
    scraper_rules
    rewrite_rules
    api

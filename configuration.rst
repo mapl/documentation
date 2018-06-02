@@ -11,7 +11,7 @@ Miniflux doesn't use any config file, **only environment variables**.
 - :code:`DATABASE_MAX_CONNS`: Number of concurrent database connections (default=20)
 - :code:`LISTEN_ADDR`: HTTP server address (default=127.0.0.1:8080)
 - :code:`BASE_URL`: Base URL (default=http://localhost/)
-- :code:`SESSION_CLEANUP_FREQUENCY`: Session garbage collector frequency (Default is 24 hours)
+- :code:`CLEANUP_FREQUENCY`: Cleanup job frequency, remove old sessions and archive read entries (Default is 24 hours)
 - :code:`HTTPS`: Force cookies to use secure flag (default is empty, try to detect automatically if HTTPS is used)
 - :code:`CERT_FILE`: SSL certificate (default="")
 - :code:`KEY_FILE`: SSL private key (default="")
@@ -27,6 +27,7 @@ Miniflux doesn't use any config file, **only environment variables**.
 - :code:`CREATE_ADMIN`: Create admin user automatically, set value to ``1`` (default="")
 - :code:`ADMIN_USERNAME`: Admin user login, used only if ``CREATE_ADMIN`` is enabled (default="")
 - :code:`ADMIN_PASSWORD`: Admin user password, used only if ``CREATE_ADMIN`` is enabled (default="")
+- :code:`POCKET_CONSUMER_KEY`: Pocket consumer API key for all users (default="")
 
 Database Connection Parameters
 ------------------------------

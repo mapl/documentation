@@ -49,7 +49,7 @@ Miniflux is compatible only with Postgres.
 - Managing schema migrations with Sqlite is painful.
 - Postgresql is powerful, rock solid and battle tested.
 - Postgresql is a great independent open source software.
-- Miniflux uses HSTORE/JSONB data types and handles user timezones with Postgres.
+- Miniflux uses *hstore/jsonb/inet* data types and handles user timezones with Postgres.
 
 Why no Javascript framework?
 ----------------------------
@@ -72,11 +72,10 @@ Miniflux uses ES6 and the Fetch API.
 Why there is no mobile application?
 -----------------------------------
 
-Using the web UI on your smartphone is not so bad. The stylesheet is responsive and you can even swipe entries.
+Using the web UI on your smartphone is not so bad.
+The stylesheet is responsive and you can even swipe entries horizontally.
 
-- Developing a native mobile application takes a lot of work.
-- You must know pretty well iOS/Android specific SDKs, languages and frameworks, which is not the case of everybody.
-- You must develop your application twice, one for Android and another one for iOS, unless you use some kind of hackish toolkit like React Native or similar.
-- You have to pay a fee to publish your app in the store even if your app doesn't make any money.
-- Big corporations control everything that's happening in their respective store, it's a closed ecosystem.
-- The web is the universal platform and could be also your app store.
+- Developing a native mobile application for each platform (iOS and Android) and different devices (smartphones and tablets) takes a lot of work.
+- The main developer of Miniflux is not a mobile application developer.
+- The development of mobile clients is left to the open source community.
+- You have to pay a fee to publish your app on the store even if your app doesn't make any money.
