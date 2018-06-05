@@ -923,3 +923,22 @@ Request:
 .. note::
 
     - You must be an administrator to delete users.
+
+Healthcheck
+~~~~~~~~~~~
+
+The healthcheck endpoint is useful for monitoring and load-balancer configuration.
+
+Request:
+
+.. code::
+
+    GET /healthcheck
+
+Response:
+
+.. code::
+
+    OK
+
+Return a status code 200 when the service is up.
