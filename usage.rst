@@ -10,7 +10,7 @@ List View
 - **Star/Unstar**: Add/Remove entry to/from bookmarks
 - **Original**: Open original entry link in a new tab
 
-.. note::  Since the version 2.0.7, the link "Save" will be shown only if integrations are configured.
+.. note::  Since the version 2.0.7, the link "Save" will be shown only if at least one integration is configured.
 
 Article View
 ~~~~~~~~~~~~

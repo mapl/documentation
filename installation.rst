@@ -23,7 +23,7 @@ Debian Package Installation
 You must have Debian >= 8 or Ubuntu >= 16.04.
 When using the Debian package, the Miniflux daemon is supervised by systemd.
 
-1. Install Debian package: :code:`dpkg -i miniflux_2.0.7_amd64.deb`
+1. Install Debian package: :code:`dpkg -i miniflux_2.0.8_amd64.deb`
 2. Check process status: :code:`systemctl status miniflux`
 3. Define the environment variable :code:`DATABASE_URL` if necessary
 4. Run the SQL migrations: :code:`miniflux -migrate`
@@ -40,7 +40,7 @@ RPM Package Installation
 You must have Fedora or Centos/Redhat >= 7.
 When you use the RPM package, the Miniflux daemon is supervised by systemd.
 
-1. Install Miniflux RPM: :code:`rpm -ivh miniflux-2.0.7-1.0.x86_64.rpm`
+1. Install Miniflux RPM: :code:`rpm -ivh miniflux-2.0.8-1.0.x86_64.rpm`
 2. Define the environment variable :code:`DATABASE_URL` if necessary
 3. Run the SQL migrations: :code:`miniflux -migrate`
 4. Create an admin user: :code:`miniflux -create-admin`
@@ -66,7 +66,7 @@ You could also use Docker Compose. Here an example of :code:`docker-compose.yml`
     version: '3'
     services:
       miniflux:
-        image: miniflux/miniflux:2.0.7
+        image: miniflux/miniflux:2.0.8
         ports:
           - "80:8080"
         depends_on:
@@ -96,4 +96,4 @@ Remember that you still need to run the database migrations and create the first
 
 The Dockerfile is available here: `<https://github.com/miniflux/docker>`_.
 
-Another way of doing the same thing, is to populate the variables ``RUN_MIGRATIONS``, ``CREATE_ADMIN``, ``ADMIN_USERNAME`` and ``ADMIN_PASSWORD``.
+Another way of doing the same thing is to populate the variables ``RUN_MIGRATIONS``, ``CREATE_ADMIN``, ``ADMIN_USERNAME`` and ``ADMIN_PASSWORD``.

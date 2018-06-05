@@ -24,4 +24,5 @@ On the feed edit page, enter your custom rules in the field "Rewrite Rules" like
     rule1,rule2
 
 Separate each rule by a comma.
-As of now, only :code:`add_image_title` is available, but later other rules could be added.
+As of now, only :code:`add_image_title` is available.
+Of course, other rules could be added later.

@@ -5,8 +5,8 @@ Sections navigation:
 
 - :code:`g u`: Go to unread page
 - :code:`g b`: Go to bookmark page
-- :code:`g h`: Go to history page
-- :code:`g f`: Go to feeds page
+- :code:`g h`: Go to the history page
+- :code:`g f`: Go to feed page
 - :code:`g c`: Go to categories page
 - :code:`g s`: Go to settings page
 - :code:`?`: Show keyboard shortcuts help

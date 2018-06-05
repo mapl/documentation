@@ -774,7 +774,7 @@ Response:
 
 .. note::
 
-    - You must be administrator to create users.
+    - You must be an administrator to create users.
 
 Update User
 ~~~~~~~~~~~
@@ -814,7 +814,7 @@ Response:
 
 .. note::
 
-    - You must be administrator to update users.
+    - You must be an administrator to update users.
 
 Get Current User
 ~~~~~~~~~~~~~~~~
@@ -876,7 +876,7 @@ Response:
 
 .. note::
 
-    - You must be administrator to fetch users.
+    - You must be an administrator to fetch users.
     - The extra field is a dictionary of optional values.
 
 Get Users
@@ -908,7 +908,7 @@ Response:
 
 .. note::
 
-    - You must be administrator to fetch users.
+    - You must be an administrator to fetch users.
     - The extra field is a dictionary of optional values.
 
 Delete User
@@ -922,4 +922,4 @@ Request:
 
 .. note::
 
-    - You must be administrator to delete users.
+    - You must be an administrator to delete users.

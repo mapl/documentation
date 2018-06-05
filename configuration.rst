@@ -166,7 +166,7 @@ You can use the reverse-proxy software of your choice, here an example with Ngin
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-This example assume that you are running the Miniflux daemon on `127.0.0.1:8080`.
+This example assumes that you are running the Miniflux daemon on `127.0.0.1:8080`.
 
-Now you can access to your Miniflux instance at `http://example.org/rss/`.
+Now you can access your Miniflux instance at `http://example.org/rss/`.
 In this configuration, cookies are using the path `/rss`.

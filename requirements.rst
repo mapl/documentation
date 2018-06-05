@@ -4,7 +4,7 @@ Requirements
 Hardware
 --------
 
-- Rasbperry Pi, small virtual machine, Platform as a service...
+- Rasbperry Pi, small virtual machine, platform as a service...
 - Probably anything that can run Linux
 - x86_64 or ARM architecture
 

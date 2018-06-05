@@ -45,10 +45,10 @@ User Interface
 - Touch events on mobile devices
 - Themes (black and white)
 
-Integrations
-------------
+Integration
+-----------
 
-- Send articles to Pinboard, Instapaper, Wallabag, or Nunux Keeper
+- Send articles to Pinboard, Instapaper, Pocket, Wallabag, or Nunux Keeper
 - Bookmarklet to subscribe to a website directly from any browsers
 - Use existing mobile applications to read your feeds by using the Fever API
 - REST API with clients written in Go and Python
@@ -64,8 +64,8 @@ Technical stuff
 
 - Self-hosted
 - Written in Go (Golang)
-- Use only Postgres as database
-- Single static binary (no more dependencies hell)
+- Designed to run only with Postgresql
+- Single static binary (no more dependency hell)
 - Automatic HTTPS configuration with Let's Encrypt
 - Use your own SSL certificate
 - Supports HTTP/2.0 if TLS is configured
