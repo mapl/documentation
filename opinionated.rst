@@ -16,7 +16,6 @@ Why the user interface is ugly?
 
 - The Miniflux layout is optimized to scan entries quickly.
 - The design of Miniflux is inspired by `Hacker News <https://news.ycombinator.com/>`_, `Lobsters <https://lobste.rs/>`_ and `Pinboard <https://pinboard.in/>`_.
-- To be honest, the main developer of Miniflux is not a UI/UX guy.
 
 Why are you not developing my feature request?
 ----------------------------------------------
@@ -44,12 +43,12 @@ Why Postgresql?
 Miniflux is compatible only with Postgres.
 
 - Supporting multiple databases increases the complexity of the software.
-- Testing the software with all major versions of Mysql, MariaDB, Sqlite, Postgres is a lot of work.
-- ORM abstracts some interesting features provided your database.
+- We do not have the resources to test the software with all major versions of MySQL, MariaDB, Sqlite, and so on.
+- ORM abstracts some interesting features provided by your database.
 - Managing schema migrations with Sqlite is painful.
 - Postgresql is powerful, rock solid and battle tested.
 - Postgresql is a great independent open source software.
-- Miniflux uses *hstore/jsonb/inet* data types and handles user timezones with Postgres.
+- Miniflux uses *hstore/jsonb/inet* data types, window functions, and handles user timezones with Postgres.
 
 Why no Javascript framework?
 ----------------------------

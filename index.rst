@@ -1,5 +1,5 @@
-Miniflux 2
-==========
+Miniflux
+========
 
 Miniflux is a minimalist and opinionated feed reader.
 
