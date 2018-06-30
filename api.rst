@@ -78,35 +78,14 @@ Usage example:
     # Discover subscriptions from a website
     subscriptions = client.discover("https://example.org")
 
-List of :code:`Client` methods:
+    # Fetch 10 starred entries
+    entries = client.get_entries(starred=True, limit=10)
 
-- :code:`me()`
-- :code:`export_feeds()`
-- :code:`import_feeds(opml)`
-- :code:`discover(website_url)`
-- :code:`get_feeds()`
-- :code:`get_feed(feed_id)`
-- :code:`get_feed_icon(feed_id)`
-- :code:`create_feed(feed_url, category_id)`
-- :code:`update_feed(feed_id, title=None, feed_url=None, site_url=None, scraper_rules=None, rewrite_rules=None, crawler=None, category_id=None)`
-- :code:`refresh_feed(feed_id)`
-- :code:`delete_feed(feed_id)`
-- :code:`get_feed_entry(feed_id, entry_id)`
-- :code:`get_feed_entries(feed_id, status=None, offset=None, limit=None, order=None, direction=None)`
-- :code:`get_entry(entry_id)`
-- :code:`get_entries(status=None, offset=None, limit=None, order=None, direction=None)`
-- :code:`update_entries(entry_ids, status)`
-- :code:`toggle_bookmark(entry_id)`
-- :code:`get_categories()`
-- :code:`create_category(title)`
-- :code:`update_category(category_id, title)`
-- :code:`delete_category(category_id)`
-- :code:`get_users()`
-- :code:`get_user_by_id(user_id)`
-- :code:`get_user_by_username(username)`
-- :code:`create_user(username, password, is_admin)`
-- :code:`update_user(user_id, username=None, password=None, theme=None, language=None, timezone=None, entry_direction=None)`
-- :code:`delete_user(user_id)`
+    # Fetch last 5 feed entries
+    feed_entries = client.get_feed_entries(123, direction='desc', order='published_at', limit=5)
+
+    # Update a feed category
+    client.update_Feed(123, category_id=456)
 
 API Reference
 -------------
@@ -340,6 +319,18 @@ Response:
         }
     }
 
+Available fields:
+
+- ``feed_url``: (string)
+- ``site_url``: (string)
+- ``title``: (string)
+- ``scraper_rules``: (string)
+- ``rewrite_rules``: (string)
+- ``crawler``: (boolean)
+- ``username``: (string)
+- ``password``: (string)
+- ``category_id``: (int)
+
 Refresh Feed
 ~~~~~~~~~~~~
 
@@ -482,11 +473,16 @@ Request:
 
 Available filters:
 
-- :code:`status`: Entry status (read, unread or removed)
-- :code:`offset`
-- :code:`limit`
-- :code:`order`: "id", "status", "published_at", "category_title", "category_id"
-- :code:`direction`: "asc" or "desc"
+- ``status``: Entry status (read, unread or removed)
+- ``offset``
+- ``limit``
+- ``order``: "id", "status", "published_at", "category_title", "category_id"
+- ``direction``: "asc" or "desc"
+- ``before`` (unix timestamp, available since Miniflux 2.0.9)
+- ``after`` (unix timestamp, available since Miniflux 2.0.9)
+- ``before_entry_id`` (int64, available since Miniflux 2.0.9)
+- ``after_entry_id`` (int64, available since Miniflux 2.0.9)
+- ``starred`` (boolean, available since Miniflux 2.0.9)
 
 Response:
 
@@ -546,11 +542,16 @@ Request:
 
 Available filters:
 
-- :code:`status`: Entry status (read, unread or removed)
-- :code:`offset`
-- :code:`limit`
-- :code:`order`: "id", "status", "published_at", "category_title", "category_id"
-- :code:`direction`: "asc" or "desc"
+- ``status``: Entry status (read, unread or removed)
+- ``offset``
+- ``limit``
+- ``order``: "id", "status", "published_at", "category_title", "category_id"
+- ``direction``: "asc" or "desc"
+- ``before`` (unix timestamp, available since Miniflux 2.0.9)
+- ``after`` (unix timestamp, available since Miniflux 2.0.9)
+- ``before_entry_id`` (int64, available since Miniflux 2.0.9)
+- ``after_entry_id`` (int64, available since Miniflux 2.0.9)
+- ``starred`` (boolean, available since Miniflux 2.0.9)
 
 Response:
 
@@ -792,12 +793,13 @@ Request:
 
 Available fields:
 
-- :code:`username`
-- :code:`password`
-- :code:`is_admin` (boolean)
-- :code:`theme`
-- :code:`language`
-- :code:`timezone`
+- :code:`username`: (string)
+- :code:`password`: (string)
+- :code:`is_admin`: (boolean)
+- :code:`theme`: (string)
+- :code:`language`: (string)
+- :code:`timezone`: (string)
+- :code:`entry_sorting_direction`: "desc" or "asc" (available since Miniflux 2.0.9)
 
 Response:
 

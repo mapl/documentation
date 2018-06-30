@@ -43,7 +43,7 @@ User Interface
 - You could add Miniflux to the home screen
 - Keyboard shortcuts
 - Touch events on mobile devices
-- Themes (black and white)
+- Themes: Default (white), Black (Dark mode) and Sans-Serif
 
 Integration
 -----------

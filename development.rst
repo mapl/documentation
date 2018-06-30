@@ -28,7 +28,7 @@ Build a binary of the application
     # All binaries
     make build
 
-    # Only Linux
+    # Only Linux (amd64 architecture)
     make linux
 
     # Build for ARM architectures (32 and 64 bits)
@@ -36,6 +36,9 @@ Build a binary of the application
 
     # Only Mac OS
     make darwin
+
+    # Only FreeBSD
+    make freebsd
 
 Run the software locally
 ------------------------
