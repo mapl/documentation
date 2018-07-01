@@ -95,7 +95,7 @@ Reset User Password
     Enter Username: myusername
     Enter Password: ****
 
-Flush all Sessions
+Flush All Sessions
 ------------------
 
 Flushing all sessions disconnect all users.
@@ -104,3 +104,13 @@ Flushing all sessions disconnect all users.
 
     miniflux -flush-sessions
     Flushing all sessions (disconnect users)
+
+Reset All Feed Errors
+---------------------
+
+Reset error counters and clear error messages for all feeds.
+
+.. code:: bash
+
+    miniflux -reset-feed-errors
+

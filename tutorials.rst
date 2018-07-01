@@ -34,11 +34,11 @@ Ubuntu 16.04
 .. code:: bash
 
     # Download the latest Debian package from the release page
-    # In this example, this is the version 2.0.8
-    $ wget https://github.com/miniflux/miniflux/releases/download/2.0.8/miniflux_2.0.8_amd64.deb
+    # In this example, this is the version 2.0.9
+    $ wget https://github.com/miniflux/miniflux/releases/download/2.0.9/miniflux_2.0.9_amd64.deb
 
     # Install the package
-    $ dpkg -i miniflux_2.0.8_amd64.deb
+    $ dpkg -i miniflux_2.0.9_amd64.deb
 
     # Run the SQL migrations
     $ export DATABASE_URL=postgres://miniflux:secret@localhost/miniflux?sslmode=disable
@@ -99,7 +99,7 @@ Miniflux installation:
 
 .. code:: bash
 
-    sudo dnf install https://github.com/miniflux/miniflux/releases/download/2.0.8/miniflux-2.0.8-1.0.x86_64.rpm
+    sudo dnf install https://github.com/miniflux/miniflux/releases/download/2.0.9/miniflux-2.0.9-1.0.x86_64.rpm
 
 2. Run SQL migrations and create first user:
 
@@ -137,7 +137,7 @@ Create a ``docker-compose.yml`` file into a folder called ``miniflux`` for examp
     version: '3'
     services:
       miniflux:
-        image: miniflux/miniflux:2.0.8
+        image: miniflux/miniflux:2.0.9
         ports:
           - "80:8080"
         depends_on:
@@ -168,7 +168,7 @@ Deploying Miniflux on Heroku
 Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.com/>`_ in few seconds.
 
 1. Clone the repository on your machine: ``git clone https://github.com/miniflux/miniflux.git``
-2. Switch to a stable version, for example ``git checkout 2.0.8`` (master is the development branch)
+2. Switch to a stable version, for example ``git checkout 2.0.9`` (master is the development branch)
 3. Create a new Heroku application: ``heroku apps:create``
 4. Add the Postgresql addon: ``heroku addons:create heroku-postgresql:hobby-dev``
 5. Add environment variables to setup the application:
@@ -214,7 +214,7 @@ You can install Miniflux in few minutes on their platform.
 
 .. code:: bash
 
-    wget https://github.com/miniflux/miniflux/releases/download/2.0.8/miniflux-linux-amd64
+    wget https://github.com/miniflux/miniflux/releases/download/2.0.9/miniflux-linux-amd64
     mv miniflux-linux-amd64 miniflux
     chmod +x miniflux
 
