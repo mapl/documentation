@@ -9,7 +9,7 @@ Especially on mobile devices when there is no hover event.
 List of Rules
 -------------
 
-- :code:`add_image_title`: Get the first image and add the title under the image.
+- :code:`add_image_title`: Add each image's title as a caption under the image.
 - :code:`add_youtube_video`: Insert Youtube video inside the article (automatic for Youtube.com)
 
 Adding Rewrite Rules
