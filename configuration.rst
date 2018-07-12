@@ -28,6 +28,7 @@ Miniflux doesn't use any config file, **only environment variables**.
 - :code:`ADMIN_USERNAME`: Admin user login, used only if ``CREATE_ADMIN`` is enabled (default="")
 - :code:`ADMIN_PASSWORD`: Admin user password, used only if ``CREATE_ADMIN`` is enabled (default="")
 - :code:`POCKET_CONSUMER_KEY`: Pocket consumer API key for all users (default="")
+- :code:`PROXY_IMAGES`: Set to ``http-only`` to proxy non-HTTPS images (avoids mixed content warnings), ``all`` to proxy all images, ``none`` to never proxy images (default="http-only")
 
 Database Connection Parameters
 ------------------------------
