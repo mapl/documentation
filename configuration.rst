@@ -1,7 +1,7 @@
 Configuration
 =============
 
-Miniflux doesn't use any config file, **only environment variables**.
+Miniflux is a `Twelve-Factor App <https://12factor.net/>`_ and doesn't use any config file, **only environment variables**.
 
 - :code:`DEBUG`: Toggle debug output (default is off)
 - :code:`WORKER_POOL_SIZE`: Number of background processes (default=5)

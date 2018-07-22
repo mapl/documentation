@@ -73,3 +73,4 @@ Technical stuff
 - External content is sanitized before being displayed
 - Use content security policy that allows only application Javascript and block inline code and styles
 - Works only in modern browsers
+- Follows the `Twelve-Factor App <https://12factor.net/>`_ principle

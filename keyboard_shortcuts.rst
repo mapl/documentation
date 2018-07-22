@@ -33,6 +33,8 @@ Actions:
 - :code:`A`: Mark current page as read
 - :code:`d`: Fetch original web page and apply scraper rules or readability
 - :code:`f`: Star or unstar the current entry
+- :code:`s`: Save article to configured third-party services
+- :code:`/`: Set focus on search form
 - :code:`Escape`: Close modal dialogs
 
 .. note:: Mozilla Firefox will block the opening of a new tab if you use the shortcut :code:`v`.

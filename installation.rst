@@ -1,6 +1,19 @@
 Installation
 ============
 
+Packages
+--------
+
++----------------+------------+------------------------------------------------------+
+| Platform       |  Type      |  URL                                                 |
++================+============+======================================================+
+| Debian/Ubuntu  |  Official  |  `<https://github.com/miniflux/package-deb>`_        |
++----------------+------------+------------------------------------------------------+
+| RHEL/Fedora    |  Official  |  `<https://github.com/miniflux/package-rpm>`_        |
++----------------+------------+------------------------------------------------------+
+| Arch Linux     |  Community |  `<https://aur.archlinux.org/packages/miniflux/>`_   |
++----------------+------------+------------------------------------------------------+
+
 You can download pre-compiled Miniflux binaries and packages on the releases page: `<https://github.com/miniflux/miniflux/releases>`_.
 
 Manual Installation

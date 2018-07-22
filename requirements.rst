@@ -29,4 +29,4 @@ A browser compatible with **ECMAScript 6 is required**.
 - Safari
 - Microsoft Edge
 
-.. warning:: Internet Explorer 11 is not supported.
+.. warning:: Internet Explorer is not supported.

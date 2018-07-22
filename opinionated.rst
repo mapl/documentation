@@ -48,16 +48,17 @@ Miniflux is compatible only with Postgres.
 - Managing schema migrations with Sqlite is painful.
 - Postgresql is powerful, rock solid and battle tested.
 - Postgresql is a great independent open source software.
-- Miniflux uses *hstore/jsonb/inet* data types, window functions, and handles user timezones with Postgres.
+- Miniflux uses *hstore/jsonb/inet* data types, window functions, full-text search and handles user timezones with Postgres.
 
 Why no Javascript framework?
 ----------------------------
 
 Miniflux uses Javascript only where it's necessary.
 
-- Rendering templates server side is so simple and fast enough for that kind of application.
+- Rendering templates server side is very simple and fast enough for that kind of application.
 - Using Javascript frameworks increase complexity.
 - The Javascript ecosystem is moving all the time, sticking to the standard is probably more sustainable.
+- Having too many dependencies is painful to maintain and update on the long term.
 
 Why only ECMAScript 6?
 ----------------------
@@ -65,16 +66,22 @@ Why only ECMAScript 6?
 Miniflux uses ES6 and the Fetch API.
 
 - All modern browsers support ES6 nowadays.
-- Only Internet Explorer 11 doesn't support ES6, but who cares?
+- Only Internet Explorer doesn't support ES6, but who cares?
 - Using a Javascript transpiler introduce another set of useless dependencies.
 
 Why there is no mobile application?
 -----------------------------------
 
-Using the web UI on your smartphone is not so bad.
-The stylesheet is responsive and you can even swipe entries horizontally.
+Using the web UI on your smartphone is not so bad:
 
-- Developing a native mobile application for each platform (iOS and Android) and different devices (smartphones and tablets) takes a lot of work.
-- The main developer of Miniflux is not a mobile application developer.
-- The development of mobile clients is left to the open source community.
-- You have to pay a fee to publish your app on the store even if your app doesn't make any money.
+- Miniflux is a `progressive web app <https://developer.mozilla.org/en-US/Apps/Progressive>`_
+- The layout is responsive
+- You can swipe entries horizontally
+- The web browser is a pretty good sandbox, the application cannot access to the data stored on your phone
+- It's cross platform: works on iOS and Android
+
+The development of mobile clients is left to the open source community:
+
+- Developing a native mobile application for each platform (iOS and Android) and different devices (smartphones and tablets) takes a lot of work
+- The main developer of Miniflux is not a mobile application developer
+- You have to pay a fee to publish your app on the store even if your app doesn't make any money
