@@ -1,6 +1,9 @@
 Upgrading to a New Version
 ==========================
 
+.. warning:: Please, do not update the software blindly without reading the `ChangeLog <https://github.com/miniflux/miniflux/blob/master/ChangeLog>`_.
+             Always check for breaking changes if any.
+
 Procedure
 ---------
 
