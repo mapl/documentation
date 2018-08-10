@@ -5,7 +5,7 @@ Requirements
 ------------
 
 - Git
-- Go >= 1.9
+- Go >= 1.10
 - Godep :code:`go get -u github.com/golang/dep/cmd/dep` (`<https://github.com/golang/dep>`_)
 
 Checkout the source code
