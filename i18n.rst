@@ -49,13 +49,7 @@ How to add a new language?
 1) Checkout the source code from the repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Create a fork of the project and clone the repository:
-
-.. code:: bash
-
-    cd $GOPATH/src
-    mkdir -p github.com/miniflux
-    git clone https://github.com/<your_username>/miniflux.git
+Fork the project, fetch the source code locally and add your fork as Git remote (:ref:`Details <checkout-sources>`).
 
 2) Create a new translation file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

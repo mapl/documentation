@@ -15,14 +15,14 @@ There are 2 official API clients, one written in Go and another one written in P
 Golang Client
 ~~~~~~~~~~~~~
 
-- Repository: `<https://github.com/miniflux/miniflux-go>`_
-- Reference: `<https://godoc.org/github.com/miniflux/miniflux-go>`_
+- Repository: `<https://github.com/miniflux/miniflux/tree/master/client>`_
+- Reference: `<https://godoc.org/miniflux.app/client>`_
 
 Installation:
 
 .. code:: bash
 
-    go get -u github.com/miniflux/miniflux-go
+    go get -u miniflux.app/client
 
 
 Usage Example:
@@ -34,11 +34,11 @@ Usage Example:
     import (
         "fmt"
 
-        "github.com/miniflux/miniflux-go"
+        miniflux "miniflux.app/client"
     )
 
     func main() {
-        client := miniflux.NewClient("https://miniflux.example.org", "admin", "secret")
+        client := miniflux.New("https://miniflux.example.org", "admin", "secret")
 
         // Fetch all feeds.
         feeds, err := client.Feeds()

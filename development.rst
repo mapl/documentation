@@ -6,19 +6,19 @@ Requirements
 
 - Git
 - Go >= 1.10
-- Godep :code:`go get -u github.com/golang/dep/cmd/dep` (`<https://github.com/golang/dep>`_)
+- Dep ``go get -u github.com/golang/dep/cmd/dep`` (`<https://github.com/golang/dep>`_)
+
+.. _checkout-sources:
 
 Checkout the source code
 ------------------------
 
-Create a fork of the project and clone the repository:
-
 .. code:: bash
 
-    cd $GOPATH/src
-    mkdir -p github.com/miniflux
-    cd github.com/miniflux
-    git clone https://github.com/<your_username>/miniflux.git
+    go get -u miniflux.app
+    cd $GOPATH/src/miniflux.app
+
+The default value for ``$GOPATH`` if not set is ``$HOME/go``.
 
 Build a binary of the application
 ---------------------------------
