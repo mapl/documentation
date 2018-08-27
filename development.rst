@@ -5,20 +5,19 @@ Requirements
 ------------
 
 - Git
-- Go >= 1.10
-- Dep ``go get -u github.com/golang/dep/cmd/dep`` (`<https://github.com/golang/dep>`_)
+- Go >= 1.11
 
 .. _checkout-sources:
 
 Checkout the source code
 ------------------------
 
-.. code:: bash
+Fork the project and clone the repository locally.
 
-    go get -u miniflux.app
-    cd $GOPATH/src/miniflux.app
+Since Go 1.11, you don't need to work inside the ``$GOPATH``.
+You can checkout the source code anywhere on your filesystem.
 
-The default value for ``$GOPATH`` if not set is ``$HOME/go``.
+Miniflux is using `Go Modules <https://github.com/golang/go/wiki/Modules>`_ to manage dependencies.
 
 Build a binary of the application
 ---------------------------------
