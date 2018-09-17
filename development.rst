@@ -24,20 +24,36 @@ Build a binary of the application
 
 .. code:: bash
 
-    # All binaries
+    # Build all binaries for all supported platforms
     make build
 
-    # Only Linux (amd64 architecture)
-    make linux
+    # Build Linux binary for amd64 architecture
+    make linux-amd64
 
-    # Build for ARM architectures (32 and 64 bits)
-    make linux-arm
+    # ARM 64 bits (arm64v8)
+    make linux-armv8
 
-    # Only Mac OS
+    # ARM 32 bits variant 7 (arm32v7)
+    make linux-armv7
+
+    # ARM 32 bits variant 6 (arm32v6)
+    make linux-armv6
+
+    # ARM 32 bits variant 5 (arm32v5)
+    make linux-armv5
+
+    # Mac OS (amd64)
     make darwin
 
-    # Only FreeBSD
+    # FreeBSD (amd64)
     make freebsd
+
+Remove precompiled binaries
+---------------------------
+
+.. code:: bash
+
+    make clean
 
 Run the software locally
 ------------------------
