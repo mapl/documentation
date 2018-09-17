@@ -66,8 +66,45 @@ Is there any browser extensions for Miniflux?
 Which binary do I need to use on my Raspberry Pi?
 -------------------------------------------------
 
-- Raspberry Pi A, A+, B, B+, Zero: :code:`miniflux-linux-armv6` compiled with :code:`GOARM=6`
-- Raspberry Pi 2, 3: :code:`miniflux-linux-armv7` compiled with :code:`GOARM=7`
++---------------------+-----------------------+
+| Raspberry Pi Model  | Miniflux Binary       |
++=====================+=======================+
+| A, A+, B, B+, Zero  | miniflux-linux-armv6  |
++---------------------+-----------------------+
+| 2 and 3             | miniflux-linux-armv7  |
++---------------------+-----------------------+
+
+Which binary do I need to use on Scaleway ARM machines?
+-------------------------------------------------------
+
++----------------+-----------------------+----------+
+| Server Type    | Miniflux Binary       | uname -m |
++================+=======================+==========+
+| Scaleway C1    | miniflux-linux-armv6  |  armv7l  |
++----------------+-----------------------+----------+
+| Scaleway ARM64 | miniflux-linux-armv8  |  aarch6  |
++----------------+-----------------------+----------+
+
+Which Docker architecture should I use?
+---------------------------------------
+
+Pulling the ``latest`` tag or a specific version should download the correct image according to your machine.
+
++---------------------+----------+----------------+
+| Docker Architecture | uname -m | Example        |
++=====================+==========+================+
+| amd64               |  x86_64  |                |
++---------------------+----------+----------------+
+| arm32v6             |  armhf   | Raspberry Pi   |
++---------------------+----------+----------------+
+| arm32v6             |  armv7l  | Scaleway C1    |
++---------------------+----------+----------------+
+| arm64v8             |  aarch6  | Scaleway ARM64 |
++---------------------+----------+----------------+
+
+If you use the wrong architecture, Docker will returns an error like this one: ``standard_init_linux.go:178: exec user process caused "exec format error"``.
+
+.. note:: Multi-arch Docker images are available only since Miniflux v2.0.12
 
 Why SQL migrations are not executed automatically?
 --------------------------------------------------
