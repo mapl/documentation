@@ -227,7 +227,7 @@ You can install Miniflux in few minutes on their platform.
     export LISTEN_ADDR=$ALWAYSDATA_HTTPD_IP:$ALWAYSDATA_HTTPD_PORT
     export DATABASE_URL="host=postgresql-xxxxx.alwaysdata.net dbname=xxxx user=xxxx password=xxx sslmode=disable"
 
-    ~/miniflux
+    env --unset PORT ~/miniflux
 
 7. Make the script executable: ``chmod +x start.sh``
 8. Run the db migrations and a create the first user:
