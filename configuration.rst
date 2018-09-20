@@ -10,6 +10,7 @@ Miniflux is a `Twelve-Factor App <https://12factor.net/>`_ and doesn't use any c
 - :code:`DATABASE_URL`: Connection URL to connect to Postgresql (default=postgres://postgres:postgres@localhost/miniflux2?sslmode=disable)
 - :code:`DATABASE_MAX_CONNS`: Number of concurrent database connections (default=20)
 - :code:`LISTEN_ADDR`: HTTP server address (default=127.0.0.1:8080)
+- :code:`PORT`: If defined, override ``LISTEN_ADDR`` to ``:$PORT`` or ``0.0.0.0:$PORT`` (default="")
 - :code:`BASE_URL`: Base URL (default=http://localhost/)
 - :code:`CLEANUP_FREQUENCY`: Cleanup job frequency, remove old sessions and archive read entries (Default is 24 hours)
 - :code:`HTTPS`: Force cookies to use secure flag (default is empty, try to detect automatically if HTTPS is used)
