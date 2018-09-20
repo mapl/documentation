@@ -1,35 +1,70 @@
 Configuration
 =============
 
-Miniflux is a `Twelve-Factor App <https://12factor.net/>`_ and doesn't use any config file, **only environment variables**.
+Miniflux doesn't use any configuration file, **only environment variables**.
 
-- :code:`DEBUG`: Toggle debug output (default is off)
-- :code:`WORKER_POOL_SIZE`: Number of background processes (default=5)
-- :code:`POLLING_FREQUENCY`: Refresh interval in minutes for feeds (default=60)
-- :code:`BATCH_SIZE`: Number of feeds to send to the queue for each interval (default=10)
-- :code:`DATABASE_URL`: Connection URL to connect to Postgresql (default=postgres://postgres:postgres@localhost/miniflux2?sslmode=disable)
-- :code:`DATABASE_MAX_CONNS`: Number of concurrent database connections (default=20)
-- :code:`LISTEN_ADDR`: HTTP server address (default=127.0.0.1:8080)
-- :code:`PORT`: If defined, override ``LISTEN_ADDR`` to ``:$PORT`` or ``0.0.0.0:$PORT`` (default="")
-- :code:`BASE_URL`: Base URL (default=http://localhost/)
-- :code:`CLEANUP_FREQUENCY`: Cleanup job frequency, remove old sessions and archive read entries (Default is 24 hours)
-- :code:`HTTPS`: Force cookies to use secure flag (default is empty, try to detect automatically if HTTPS is used)
-- :code:`CERT_FILE`: SSL certificate (default="")
-- :code:`KEY_FILE`: SSL private key (default="")
-- :code:`CERT_DOMAIN`: Use Let's Encrypt to configure automatically a certificate for this domain (default="")
-- :code:`CERT_CACHE`: Let's Encrypt cache directory (default="/tmp/cert_cache")
-- :code:`OAUTH2_PROVIDER`: OAuth2 provider to use, at this time only "google" is supported (default="")
-- :code:`OAUTH2_CLIENT_ID`: OAuth2 client ID (default="")
-- :code:`OAUTH2_CLIENT_SECRET`: OAuth2 client secret (default="")
-- :code:`OAUTH2_REDIRECT_URL`: OAuth2 redirect URL (default="")
-- :code:`OAUTH2_USER_CREATION`: Set to 1 to authorize user creation (default=0)
-- :code:`DISABLE_HSTS`: Disable HTTP Strict Transport Security header (enabled by default if HTTPS)
-- :code:`RUN_MIGRATIONS`: Run database migrations, set to value to ``1`` (default="")
-- :code:`CREATE_ADMIN`: Create admin user automatically, set value to ``1`` (default="")
-- :code:`ADMIN_USERNAME`: Admin user login, used only if ``CREATE_ADMIN`` is enabled (default="")
-- :code:`ADMIN_PASSWORD`: Admin user password, used only if ``CREATE_ADMIN`` is enabled (default="")
-- :code:`POCKET_CONSUMER_KEY`: Pocket consumer API key for all users (default="")
-- :code:`PROXY_IMAGES`: Set to ``http-only`` to proxy non-HTTPS images (avoids mixed content warnings), ``all`` to proxy all images, ``none`` to never proxy images (default="http-only")
+Systemd uses the file ``/etc/miniflux.conf`` to populate environment variables.
+
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Variable Name             | Description                                                          | Default Value                                                                   |
++===========================+======================================================================+=================================================================================+
+| ``DEBUG``                 | Enable debug logs if a value is set                                  | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``WORKER_POOL_SIZE``      | Number of background workers                                         | ``5``                                                                           |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``POLLING_FREQUENCY``     | Refresh interval in minutes for feeds                                | ``60`` (minutes)                                                                |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``BATCH_SIZE``            | Number of feeds to send to the queue for each interval               | ``10``                                                                          |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``DATABASE_URL``          | Postgresql connection parameters                                     | ``postgres://postgres:postgres@localhost/miniflux2?sslmode=disable``            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``DATABASE_MAX_CONNS``    | Maximum number of database connections                               | ``20``                                                                          |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``DATABASE_MIN_CONNS``    | Minimum number of database connections                               | ``1``                                                                           |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``LISTEN_ADDR``           | HTTP server listening address                                        | ``127.0.0.1:8080``                                                              |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``PORT``                  | If defined, override ``LISTEN_ADDR`` to ``0.0.0.0:$PORT``            | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``BASE_URL``              | Base URL to generate HTML links and base path for cookies            | ``http://localhost/``                                                           |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``CLEANUP_FREQUENCY``     | Cleanup job frequency, remove old sessions and archive read entries  | ``24`` (hours)                                                                  |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``HTTPS``                 | Forces cookies to use secure flag and send HSTS headers              | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``DISABLE_HSTS``          | Disable HTTP Strict Transport Security header if HTTPS is set        | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``CERT_FILE``             | Path to SSL certificate                                              | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``KEY_FILE``              | Path to SSL private key                                              | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``CERT_DOMAIN``           | Use Let's Encrypt to get automatically a certificate for this domain | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``CERT_CACHE``            | Let's Encrypt cache directory                                        | ``/tmp/cert_cache``                                                             |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``OAUTH2_PROVIDER``       | OAuth2 provider to use, at this time only ``google`` is supported    | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``OAUTH2_CLIENT_ID``      | OAuth2 client ID                                                     | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``OAUTH2_CLIENT_SECRET``  | OAuth2 client secret                                                 | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``OAUTH2_REDIRECT_URL``   | OAuth2 redirect URL                                                  | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``OAUTH2_USER_CREATION``  | Set to ``1`` to authorize OAuth2 user creation                       | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``RUN_MIGRATIONS``        | Set to ``1`` to run database migrations                              | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``CREATE_ADMIN``          | Set to ``1`` to create an admin user from environment variables      | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``ADMIN_USERNAME``        | Admin user login, used only if ``CREATE_ADMIN`` is enabled           | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``ADMIN_PASSWORD``        | Admin user password, used only if ``CREATE_ADMIN`` is enabled        | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``POCKET_CONSUMER_KEY``   | Pocket consumer API key for all users                                | None                                                                            |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| ``PROXY_IMAGES``          | Avoids mixed content warnings for external images:                   | ``http-only``                                                                   |
+|                           | ``http-only``, ``all``, or ``none``                                  |                                                                                 |
++---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 Database Connection Parameters
 ------------------------------
