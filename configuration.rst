@@ -69,7 +69,7 @@ Systemd uses the file ``/etc/miniflux.conf`` to populate environment variables.
 Database Connection Parameters
 ------------------------------
 
-Miniflux use the `Golang library pq <https://github.com/lib/pq>`_ to communicate with Postgres.
+Miniflux uses the `Golang library pq <https://github.com/lib/pq>`_ to communicate with Postgres.
 Connection parameters are available `on this page <https://godoc.org/github.com/lib/pq#hdr-Connection_String_Parameters>`_.
 
 The default value for :code:`DATABASE_URL` is :code:`postgres://postgres:postgres@localhost/miniflux2?sslmode=disable`.

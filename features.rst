@@ -4,7 +4,7 @@ Features
 Reader
 ------
 
-- Feed formats supported: Atom, RSS 1.0/2.0 and JSON
+- Feed formats supported: Atom, RSS 1.0/2.0, RDF and JSON
 - OPML import/export
 - Support multiple enclosures/attachments (Podcasts, videos, music, and images)
 - Play videos from YouTube channels directly inside Miniflux
@@ -12,14 +12,14 @@ Reader
 - Bookmarks
 - Fetch website icons (favicons)
 - Save articles to third-party services
-- Available in Chinese, Dutch, English, French, German, and Polish
+- Available in Chinese, Dutch, English, French, German, Polish, and Russian
 
 Privacy
 -------
 
 - Remove pixel trackers
 - Fetch original links when the feed is coming from FeedBurner
-- Open external links with the attributes :code:`rel="noopener noreferrer" referrerpolicy="no-referrer"`
+- Open external links with the attributes ``rel="noopener noreferrer" referrerpolicy="no-referrer"``
 - Image proxy to avoid mixed content warnings with HTTPS
 - Play Youtube videos by using the domain `youtube-nocookie.com`
 - Block any external Javascript code to avoid tracking
@@ -32,6 +32,7 @@ Content Manipulation
 - Custom rewriting rules
     - Append image title for comics
     - Add Youtube video
+- Override default user agent to bypass websites restrictions
 
 User Interface
 --------------

@@ -27,7 +27,7 @@ Why are you not developing my feature request?
 Why choose Golang as a programming language?
 --------------------------------------------
 
-Go is probably the best choice for self-hosted software:
+`Go <https://golang.org/>`_ is probably the best choice for self-hosted software:
 
 - Go is a simple programming language.
 - Running code concurrently is part of the language.
@@ -75,8 +75,9 @@ Why there is no mobile application?
 Using the web UI on your smartphone is not so bad:
 
 - Miniflux is a `progressive web app <https://developer.mozilla.org/en-US/Apps/Progressive>`_
-- The layout is responsive
-- You can swipe entries horizontally
+- The layout adapts to the screen size (responsive design)
+- You could add the application to the home screen like any native application
+- You can swipe entries horizontally to change their status
 - The web browser is a pretty good sandbox, the application cannot access to the data stored on your phone
 - It's cross platform: works on iOS and Android
 
