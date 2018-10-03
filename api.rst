@@ -78,6 +78,9 @@ Usage example:
     # Discover subscriptions from a website
     subscriptions = client.discover("https://example.org")
 
+    # Create a new feed, with a personalized user agent and with the crawler enabled
+    feed_id = client.create_feed("http://example.org/feed.xml", 42, crawler=True, user_agent="GoogleBot")
+
     # Fetch 10 starred entries
     entries = client.get_entries(starred=True, limit=10)
 
@@ -273,6 +276,18 @@ Response:
         "feed_id": 262,
     }
 
+Required fields:
+
+- ``feed_url``: Feed URL (string)
+- ``category_id``: Category ID (int)
+
+Optional fields:
+
+- ``username``: Feed username (string)
+- ``password``: Feed password (string)
+- ``crawler``: Enable/Disable scraper (boolean)
+- ``user_agent``: Custom user agent for the feed (string)
+
 Update Feed
 ~~~~~~~~~~~
 
@@ -324,12 +339,13 @@ Available fields:
 - ``feed_url``: (string)
 - ``site_url``: (string)
 - ``title``: (string)
+- ``category_id``: (int)
 - ``scraper_rules``: (string)
 - ``rewrite_rules``: (string)
 - ``crawler``: (boolean)
 - ``username``: (string)
 - ``password``: (string)
-- ``category_id``: (int)
+- ``user_agent``: Custom user agent for the feed (string)
 
 Refresh Feed
 ~~~~~~~~~~~~
