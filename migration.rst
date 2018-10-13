@@ -25,7 +25,7 @@ If you don't care about your previous data, export your feeds from Miniflux 1.x 
 Migration Script
 ----------------
 
-There is a migration script in `Miniflux Legacy repository <https://github.com/miniflux/miniflux-legacy>`_: :code:`scripts/migrate-v2.php`.
+There is a migration script in the `archived repository <https://github.com/miniflux/archives>`_: ``scripts/migrate-v2.php``.
 
 - This script requires direct access to the old and the new database.
 - The first group linked to a feed will become the category associated with the imported feed.
