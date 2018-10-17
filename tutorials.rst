@@ -197,6 +197,36 @@ Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.
   The Miniflux binary will be located into the folder ``bin``.
 - To update Miniflux, pull the new version from the repository and push to Heroku again.
 
+Deploying Miniflux on Google App Engine
+---------------------------------------
+
+1. Create a Postgresql instance via Google Cloud SQL, then create a user and a new database
+2. Clone the repository and create a ``app.yaml`` file in the project root directory
+
+.. code:: yaml
+
+    runtime: go111
+    env_variables:
+        CLOUDSQL_CONNECTION_NAME: INSTANCE_CONNECTION_NAME
+        CLOUDSQL_USER: replace-me
+        CLOUDSQL_PASSWORD: top-secret
+
+        CREATE_ADMIN: 1
+        ADMIN_USERNAME: foobar
+        ADMIN_PASSWORD: test123
+        RUN_MIGRATIONS: 1
+        DATABASE_URL: "user=replace-me password=top-secret host=/cloudsql/INSTANCE_CONNECTION_NAME dbname=miniflux"
+
+3. Last step, deploy your application: ``gcloud app deploy``
+
+Replace the values according to your project configuration.
+The database connection is made over a Unix socket on App Engine.
+
+Refer to Google Cloud documentation for more details:
+
+- `<https://cloud.google.com/appengine/docs/standard/go111/building-app/>`_
+- `<https://cloud.google.com/appengine/docs/standard/go111/using-cloud-sql>`_
+
 Deploying Miniflux on AlwaysData
 --------------------------------
 

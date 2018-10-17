@@ -1,8 +1,8 @@
 Frequently Asked Questions
 ==========================
 
-Feature X was available in Miniflux 1?
---------------------------------------
+Feature X was available in Miniflux v1?
+---------------------------------------
 
 Miniflux 2 doesn't try to reimplement all features of Miniflux 1.
 The minimalist approach is pushed a little bit further.
