@@ -3,11 +3,8 @@ Miniflux
 
 Miniflux is a minimalist and opinionated feed reader.
 
-.. image:: _static/overview.png
-
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
 
    intro
    opinionated

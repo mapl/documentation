@@ -9,8 +9,8 @@ Installing Miniflux on your own server
 Ubuntu 16.04
 ''''''''''''
 
-1. Install Postgresql: ``apt install postgresql``
-2. Prepare the database:
+- Install Postgresql: ``apt install postgresql``
+- Prepare the database:
 
 .. code:: bash
 
@@ -29,7 +29,7 @@ Ubuntu 16.04
     $ psql miniflux -c 'create extension hstore'
     CREATE EXTENSION
 
-3. Install Miniflux:
+- Install Miniflux:
 
 .. code:: bash
 
@@ -76,7 +76,7 @@ Ubuntu 16.04
     [INFO] [Worker] #3 started
     [INFO] Listening on "0.0.0.0:80" without TLS
 
-4. Now, you can access to your Miniflux instance via ``http://your-server/``
+- Now, you can access to your Miniflux instance via ``http://your-server/``
 
 Fedora 28
 '''''''''
@@ -95,13 +95,13 @@ Database installation and configuration:
 
 Miniflux installation:
 
-1. Install RPM package:
+- Install RPM package:
 
 .. code:: bash
 
     sudo dnf install https://github.com/miniflux/miniflux/releases/download/2.0.10/miniflux-2.0.10-1.0.x86_64.rpm
 
-2. Run SQL migrations and create first user:
+- Run SQL migrations and create first user:
 
 .. code:: bash
 
@@ -113,7 +113,7 @@ Miniflux installation:
     # Create frist user:
     miniflux -create-admin
 
-3. Start the service:
+- Start the service:
 
 .. code:: bash
 
@@ -123,7 +123,7 @@ Miniflux installation:
     # To watch the logs:
     journalctl -f -u miniflux
 
-5. Access your Miniflux instance via ``http://your-server:8080/``
+- Access your Miniflux instance via ``http://your-server:8080/``
 
 Running Miniflux with Docker Compose
 ------------------------------------
@@ -167,11 +167,11 @@ Deploying Miniflux on Heroku
 
 Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.com/>`_ in few seconds.
 
-1. Clone the repository on your machine: ``git clone https://github.com/miniflux/miniflux.git``
-2. Switch to a stable version, for example ``git checkout 2.0.10`` (master is the development branch)
-3. Create a new Heroku application: ``heroku apps:create``
-4. Add the Postgresql addon: ``heroku addons:create heroku-postgresql:hobby-dev``
-5. Add environment variables to setup the application:
+- Clone the repository on your machine: ``git clone https://github.com/miniflux/miniflux.git``
+- Switch to a stable version, for example ``git checkout 2.0.10`` (master is the development branch)
+- Create a new Heroku application: ``heroku apps:create``
+- Add the Postgresql addon: ``heroku addons:create heroku-postgresql:hobby-dev``
+- Add environment variables to setup the application:
 
 .. code::
 
@@ -183,8 +183,8 @@ Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.
     heroku config:set ADMIN_USERNAME=admin
     heroku config:set ADMIN_PASSWORD=test123
 
-6. Deploy the application on Heroku: ``git push heroku master``
-7. After the application is installed successfully, you don't need these variables anymore:
+- Deploy the application on Heroku: ``git push heroku master``
+- After the application is installed successfully, you don't need these variables anymore:
 
 .. code::
 
@@ -200,8 +200,8 @@ Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.
 Deploying Miniflux on Google App Engine
 ---------------------------------------
 
-1. Create a Postgresql instance via Google Cloud SQL, then create a user and a new database
-2. Clone the repository and create a ``app.yaml`` file in the project root directory
+- Create a Postgresql instance via Google Cloud SQL, then create a user and a new database
+- Clone the repository and create a ``app.yaml`` file in the project root directory
 
 .. code:: yaml
 
@@ -217,7 +217,7 @@ Deploying Miniflux on Google App Engine
         RUN_MIGRATIONS: 1
         DATABASE_URL: "user=replace-me password=top-secret host=/cloudsql/INSTANCE_CONNECTION_NAME dbname=miniflux"
 
-3. Last step, deploy your application: ``gcloud app deploy``
+- Last step, deploy your application: ``gcloud app deploy``
 
 Replace the values according to your project configuration.
 The database connection is made over a Unix socket on App Engine.
@@ -235,14 +235,14 @@ Deploying Miniflux on AlwaysData
 `AlwaysData <https://www.alwaysdata.com/>`_ is a French shared hosting provider.
 You can install Miniflux in few minutes on their platform.
 
-1. Open an account
-2. Via the admin panel, create a Postgresql database and define a user/password
-3. Create a website, choose "User Program", use a custom shell-script, for example ``~/start.sh``
+- Open an account
+- Via the admin panel, create a Postgresql database and define a user/password
+- Create a website, choose "User Program", use a custom shell-script, for example ``~/start.sh``
 
 .. image:: _static/alwaysdata_1.png
 
-4. Enable the SSH access and open a session `ssh account@ssh-account.alwaysdata.net`
-5. Install Miniflux:
+- Enable the SSH access and open a session `ssh account@ssh-account.alwaysdata.net`
+- Install Miniflux:
 
 .. code:: bash
 
@@ -250,7 +250,7 @@ You can install Miniflux in few minutes on their platform.
     mv miniflux-linux-amd64 miniflux
     chmod +x miniflux
 
-6. Create a shell script to start miniflux, let's call it ``start.sh``:
+- Create a shell script to start miniflux, let's call it ``start.sh``:
 
 .. code:: bash
 
@@ -261,8 +261,8 @@ You can install Miniflux in few minutes on their platform.
 
     env --unset PORT ~/miniflux
 
-7. Make the script executable: ``chmod +x start.sh``
-8. Run the db migrations and a create the first user:
+- Make the script executable: ``chmod +x start.sh``
+- Run the db migrations and a create the first user:
 
 .. code:: bash
 
@@ -270,7 +270,7 @@ You can install Miniflux in few minutes on their platform.
     ./miniflux -migrate
     ./miniflux -create-admin
 
-9. Go to ``https://your-account.alwaysdata.net``
+- Go to ``https://your-account.alwaysdata.net``
 
 Via the admin panel, in Advanced > Processes, you can even see the Miniflux process running:
 

@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Miniflux'
-copyright = '2017, The Miniflux Authors'
+copyright = '2018, The Miniflux Authors'
 author = 'The Miniflux Authors'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -88,12 +88,13 @@ todo_include_todos = False
 
 html_theme_path = [better_theme_path]
 html_theme = 'better'
+html_short_title = "Home"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {'inlinecss': '.document img {max-width: 100%; border: 1px solid #000}'}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -106,10 +107,7 @@ html_static_path = ['_static']
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
-    '**': [
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-    ]
+    '**': ['localtoc.html', 'searchbox.html'],
 }
 
 
