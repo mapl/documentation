@@ -48,6 +48,9 @@ Build a binary of the application
     # FreeBSD (amd64)
     make freebsd
 
+    # OpenBSD (amd64)
+    make openbsd
+
 Remove precompiled binaries
 ---------------------------
 

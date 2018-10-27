@@ -12,7 +12,11 @@ Operating Systems
 -----------------
 
 - GNU/Linux
-- Darwin
+- `Darwin <https://github.com/golang/go/wiki/Darwin>`_
+- `FreedBSD <https://github.com/golang/go/wiki/FreeBSD>`_
+- `OpenBSD <https://github.com/golang/go/wiki/OpenBSD>`_
+
+.. note:: Operating systems supported by Golang should work but Miniflux is mainly tested with Linux.
 
 Databases
 ---------

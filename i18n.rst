@@ -4,7 +4,7 @@ Internationalization
 Translation files
 -----------------
 
-Translations are just a simple JSON file.
+Translations are simple JSON files.
 This is a mapping table, the key could be a unique ID or an English string.
 
 .. code:: json

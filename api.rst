@@ -144,6 +144,12 @@ Response:
         }
     ]
 
+Optional fields:
+
+- ``username``: Feed username (string)
+- ``password``: Feed password (string)
+- ``user_agent``: Custom user agent (string)
+
 Get Feeds
 ~~~~~~~~~
 

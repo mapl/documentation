@@ -19,6 +19,7 @@ Items navigation:
 - :code:`Right Arrow`: Go to next item
 - :code:`k`: Go to next item
 - :code:`n`: Go to next item
+- :code:`g f`: Go to feed
 
 Pages navigation:
 
@@ -34,6 +35,7 @@ Actions:
 - :code:`d`: Fetch original web page and apply scraper rules or readability
 - :code:`f`: Star or unstar the current entry
 - :code:`s`: Save article to configured third-party services
+- :code:`#`: Removes current feed
 - :code:`/`: Set focus on search form
 - :code:`Escape`: Close modal dialogs
 

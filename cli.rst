@@ -6,7 +6,7 @@ Show Version
 
 .. code:: bash
 
-    miniflux -version
+    miniflux -version # or -v
     2.0.0
 
 Show Build Information
@@ -14,7 +14,7 @@ Show Build Information
 
 .. code:: bash
 
-    miniflux -info
+    miniflux -info # or -i
     Version: 2.0.0
     Build Date: 2017-11-20T22:45:00
     Go Version: go1.9
@@ -113,4 +113,3 @@ Reset error counters and clear error messages for all feeds.
 .. code:: bash
 
     miniflux -reset-feed-errors
-

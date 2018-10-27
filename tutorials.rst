@@ -227,6 +227,8 @@ Refer to Google Cloud documentation for more details:
 - `<https://cloud.google.com/appengine/docs/standard/go111/building-app/>`_
 - `<https://cloud.google.com/appengine/docs/standard/go111/using-cloud-sql>`_
 
+.. warning:: Running Miniflux on Google App Engine should work but it's considered experimental.
+
 Deploying Miniflux on AlwaysData
 --------------------------------
 
