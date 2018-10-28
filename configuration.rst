@@ -8,27 +8,27 @@ Systemd uses the file ``/etc/miniflux.conf`` to populate environment variables.
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | Variable Name             | Description                                                          | Default Value                                                                   |
 +===========================+======================================================================+=================================================================================+
-| ``DEBUG``                 | Enable debug logs if a value is set                                  | None                                                                            |
+| ``DEBUG``                 | Set the value to ``1`` to enable debug logs                          | None                                                                            |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``WORKER_POOL_SIZE``      | Number of background workers                                         | ``5``                                                                           |
+| ``WORKER_POOL_SIZE``      | Number of background workers                                         | 5                                                                               |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``POLLING_FREQUENCY``     | Refresh interval in minutes for feeds                                | ``60`` (minutes)                                                                |
+| ``POLLING_FREQUENCY``     | Refresh interval in minutes for feeds                                | 60 (minutes)                                                                    |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``BATCH_SIZE``            | Number of feeds to send to the queue for each interval               | ``10``                                                                          |
+| ``BATCH_SIZE``            | Number of feeds to send to the queue for each interval               | 10                                                                              |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | ``DATABASE_URL``          | Postgresql connection parameters                                     | ``postgres://postgres:postgres@localhost/miniflux2?sslmode=disable``            |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``DATABASE_MAX_CONNS``    | Maximum number of database connections                               | ``20``                                                                          |
+| ``DATABASE_MAX_CONNS``    | Maximum number of database connections                               | 20                                                                              |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``DATABASE_MIN_CONNS``    | Minimum number of database connections                               | ``1``                                                                           |
+| ``DATABASE_MIN_CONNS``    | Minimum number of database connections                               | 1                                                                               |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | ``LISTEN_ADDR``           | HTTP server listening address                                        | ``127.0.0.1:8080``                                                              |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``PORT``                  | If defined, override ``LISTEN_ADDR`` to ``0.0.0.0:$PORT`` (Heroku)   | None                                                                            |
+| ``PORT``                  | Override ``LISTEN_ADDR`` to ``0.0.0.0:$PORT`` (Heroku, App Engine)   | None                                                                            |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | ``BASE_URL``              | Base URL to generate HTML links and base path for cookies            | ``http://localhost/``                                                           |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| ``CLEANUP_FREQUENCY``     | Cleanup job frequency, remove old sessions and archive read entries  | ``24`` (hours)                                                                  |
+| ``CLEANUP_FREQUENCY``     | Cleanup job frequency, remove old sessions and archive read entries  | 24 (hours)                                                                      |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | ``HTTPS``                 | Forces cookies to use secure flag and send HSTS headers              | None                                                                            |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -65,6 +65,8 @@ Systemd uses the file ``/etc/miniflux.conf`` to populate environment variables.
 | ``PROXY_IMAGES``          | Avoids mixed content warnings for external images:                   | ``http-only``                                                                   |
 |                           | ``http-only``, ``all``, or ``none``                                  |                                                                                 |
 +---------------------------+----------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+Accepted boolean values are ``1``, ``yes``, ``true``, and ``on``.
 
 Database Connection Parameters
 ------------------------------
