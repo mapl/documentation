@@ -16,7 +16,7 @@ Operating Systems
 - `FreedBSD <https://github.com/golang/go/wiki/FreeBSD>`_
 - `OpenBSD <https://github.com/golang/go/wiki/OpenBSD>`_
 
-.. note:: Operating systems supported by Golang should work but Miniflux is mainly tested with Linux.
+.. note:: All Unix operating systems supported by Golang should work but Miniflux is mainly tested with Linux.
 
 Databases
 ---------

@@ -53,30 +53,6 @@ Run Database Migrations
 
 When you run the migrations, make sure that all Miniflux processes are stopped.
 
-.. _migrations-superuser:
-
-Creating extensions requires :code:`SUPERUSER` privileges.
-Several solutions are available:
-
-1) Give :code:`SUPERUSER` privileges to miniflux user only during the schema migration:
-
-.. code:: sql
-
-    ALTER USER miniflux WITH SUPERUSER;
-    -- Run the migrations (miniflux -migrate)
-    ALTER USER miniflux WITH NOSUPERUSER;
-
-2) You could `create the hstore extension <https://www.postgresql.org/docs/current/static/sql-createextension.html>`_ as a postgres user with ``SUPERUSER`` privileges before to run the migrations.
-
-.. code::
-
-    sudo -u postgres psql $MINIFLUX_DATABASE
-    > CREATE EXTENSION hstore;
-
-.. warning:: Password that contains special characters like ``^`` might be rejected since Miniflux 2.0.3.
-             Golang v1.10 is `now validating the password <https://go-review.googlesource.com/c/go/+/87038>`_ and will return this error: ``net/url: invalid userinfo``.
-             To avoid this issue, do not use the URL format for ``DATABASE_URL`` or make sure the password is URL encoded.
-
 Create Admin User
 -----------------
 

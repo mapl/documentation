@@ -1,5 +1,5 @@
-Installation Tutorials
-======================
+Tutorials
+=========
 
 Here are a couple of tutorials to help you to install Miniflux (They are only examples).
 
