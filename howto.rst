@@ -84,6 +84,24 @@ Example with Nginx:
         }
     }
 
+Alternative Nginx configuration:
+
+.. code:: bash
+
+    server {
+        server_name     my.domain.tld;
+        listen          80;
+
+        location / {
+            proxy_pass http://127.0.0.1:8080;
+            proxy_redirect off;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+        }
+    }
+
 This example assumes that you are running the Miniflux daemon on ``127.0.0.1:8080``.
 
 Now you can access your Miniflux instance at `http://example.org/rss/`.
