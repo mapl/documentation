@@ -34,11 +34,11 @@ Ubuntu 16.04
 .. code:: bash
 
     # Download the latest Debian package from the release page
-    # In this example, this is the version 2.0.10
-    $ wget https://github.com/miniflux/miniflux/releases/download/2.0.10/miniflux_2.0.10_amd64.deb
+    # In this example, this is the version 2.0.13
+    $ wget https://github.com/miniflux/miniflux/releases/download/2.0.13/miniflux_2.0.13_amd64.deb
 
     # Install the package
-    $ dpkg -i miniflux_2.0.10_amd64.deb
+    $ dpkg -i miniflux_2.0.13_amd64.deb
 
     # Run the SQL migrations
     $ export DATABASE_URL=postgres://miniflux:secret@localhost/miniflux?sslmode=disable
@@ -99,7 +99,7 @@ Miniflux installation:
 
 .. code:: bash
 
-    sudo dnf install https://github.com/miniflux/miniflux/releases/download/2.0.10/miniflux-2.0.10-1.0.x86_64.rpm
+    sudo dnf install https://github.com/miniflux/miniflux/releases/download/2.0.13/miniflux-2.0.13-1.0.x86_64.rpm
 
 - Run SQL migrations and create first user:
 
@@ -168,7 +168,7 @@ Deploying Miniflux on Heroku
 Since the version 2.0.6, you can deploy Miniflux on `Heroku <https://www.heroku.com/>`_ in few seconds.
 
 - Clone the repository on your machine: ``git clone https://github.com/miniflux/miniflux.git``
-- Switch to a stable version, for example ``git checkout 2.0.10`` (master is the development branch)
+- Switch to a stable version, for example ``git checkout 2.0.13`` (master is the development branch)
 - Create a new Heroku application: ``heroku apps:create``
 - Add the Postgresql addon: ``heroku addons:create heroku-postgresql:hobby-dev``
 - Add environment variables to setup the application:
@@ -246,7 +246,7 @@ You can install Miniflux in few minutes on their platform.
 
 .. code:: bash
 
-    wget https://github.com/miniflux/miniflux/releases/download/2.0.10/miniflux-linux-amd64
+    wget https://github.com/miniflux/miniflux/releases/download/2.0.13/miniflux-linux-amd64
     mv miniflux-linux-amd64 miniflux
     chmod +x miniflux
 

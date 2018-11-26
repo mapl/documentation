@@ -36,7 +36,7 @@ Debian Package Installation
 You must have Debian >= 8 or Ubuntu >= 16.04.
 When using the Debian package, the Miniflux daemon is supervised by systemd.
 
-1. Install Debian package: :code:`dpkg -i miniflux_2.0.10_amd64.deb`
+1. Install Debian package: :code:`dpkg -i miniflux_2.0.13_amd64.deb`
 2. Check process status: :code:`systemctl status miniflux`
 3. Define the environment variable :code:`DATABASE_URL` if necessary
 4. Run the SQL migrations: :code:`miniflux -migrate`
@@ -53,7 +53,7 @@ RPM Package Installation
 You must have Fedora or Centos/Redhat >= 7.
 When you use the RPM package, the Miniflux daemon is supervised by systemd.
 
-1. Install Miniflux RPM: :code:`rpm -ivh miniflux-2.0.10-1.0.x86_64.rpm`
+1. Install Miniflux RPM: :code:`rpm -ivh miniflux-2.0.13-1.0.x86_64.rpm`
 2. Define the environment variable :code:`DATABASE_URL` if necessary
 3. Run the SQL migrations: :code:`miniflux -migrate`
 4. Create an admin user: :code:`miniflux -create-admin`
