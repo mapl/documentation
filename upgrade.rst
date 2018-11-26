@@ -7,12 +7,13 @@ Upgrading to a New Version
 Procedure
 ---------
 
-1. Disconnect all users by flushing all sessions: :code:`miniflux -flush-sessions`
-2. Stop the process
-3. Backup your database
-4. Check that your backup is really working
-5. Run database migrations: :code:`miniflux -migrate`
-6. Start the process
+1. Export Environment Variable of Miniflux's DATABASE_URL if not already done: :code:`export DATABASE_URL=postgres:// ...` 
+2. Disconnect all users by flushing all sessions: :code:`miniflux -flush-sessions` 
+3. Stop the process
+4. Backup your database
+5. Check that your backup is really working
+6. Run database migrations: :code:`miniflux -migrate`
+7. Start the process
 
 Debian Package
 --------------
