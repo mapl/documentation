@@ -32,6 +32,10 @@ Check that the capability is added:
     getcap /usr/bin/miniflux
     /usr/bin/miniflux = cap_net_bind_service+ep
 
+.. note::
+
+    Another way of doing this is to use the :ref:`Systemd Socket Activation <systemd-socket-activation>` or a reverse-proxy like Nginx.
+
 Reverse-Proxy Configuration
 ---------------------------
 
@@ -112,11 +116,18 @@ Reverse-Proxy with a Unix socket
 
 If you prefer to use a Unix socket, change the environment variable ``LISTEN_ADDR`` to the path of your socket.
 
-Example to use a Unix socket:
+Configure Miniflux to use a Unix socket:
 
 .. code:: bash
 
-    export LISTEN_ADDR=/var/run/miniflux.sock
+    LISTEN_ADDR=/run/miniflux/miniflux.sock
+
+The socket folder must be writeable by the miniflux user:
+
+.. code:: bash
+
+    sudo mkdir /run/miniflux
+    sudo chown miniflux: /run/miniflux
 
 Example with Nginx as reverse-proxy:
 
@@ -127,7 +138,7 @@ Example with Nginx as reverse-proxy:
         listen          80;
 
         location / {
-            proxy_pass  http://unix:/var/run/miniflux.sock;
+            proxy_pass  http://unix:/run/miniflux/miniflux.sock;
             proxy_redirect off;
             proxy_set_header Host $host;
             proxy_set_header X-Real-IP $remote_addr;
@@ -138,12 +149,82 @@ Example with Nginx as reverse-proxy:
 
 .. note::
 
-    - The Miniflux process must have write access to the socket folder.
+    - By default, the socket has the permissions ``0666`` to make it accessible from other processes like Nginx or others.
     - If you don't set the header X-Forwarded-For, Miniflux won't be able to determine the remote IP address.
     - Listening on Unix socket is available only since Miniflux v2.0.13.
 
-How to use Let's Encrypt
-------------------------
+.. _systemd-socket-activation:
+
+Systemd Socket Activation
+-------------------------
+
+In this example, we are going to expose Miniflux on port 80 via Systemd.
+
+Miniflux will be started by systemd at boot or on-demand.
+The process is running under an unprivileged user ``miniflux`` and we load the environment variables from ``/etc/miniflux.conf``.
+
+Create a file ``/etc/systemd/system/miniflux.socket``:
+
+.. code::
+
+    [Unit]
+    Description=Miniflux Socket
+
+    [Socket]
+    NoDelay=true
+
+    # Listen on port 80.
+    # To use a unix socket, define the absolute path here.
+    ListenStream=80
+
+    [Install]
+    WantedBy=sockets.target
+
+Create a file ``/etc/systemd/system/miniflux.service``:
+
+.. code::
+
+    [Unit]
+    Description=Miniflux Service
+    Requires=mniflux.socket
+
+    [Service]
+    ExecStart=/usr/bin/miniflux
+    EnvironmentFile=/etc/miniflux.conf
+    User=miniflux
+    NonBlocking=true
+
+    [Install]
+    WantedBy=multi-user.target
+
+Enable this:
+
+.. code::
+
+    sudo systemctl enable miniflux.socket
+    sudo systemctl enable miniflux.service
+
+Tell systemd to listen on port 80 for us:
+
+.. code::
+
+    sudo systemctl start miniflux.socket
+
+If you go to ``http://127.0.0.1/``, systemd will start the Miniflux service automatically.
+
+If you watch the logs with ``journalctl -u miniflux.service``, you will see ``[INFO] Listening on systemd socket``.
+
+.. note::
+
+    - Systemd socket activation is available only since Miniflux v2.0.13.
+    - When using this feature, Miniflux ignores ``LISTEN_ADDR``.
+
+.. warning::
+
+    This feature is experimental.
+
+Let's Encrypt Configuration
+---------------------------
 
 You could use Let's Encrypt to manage the SSL certificate automatically and activate HTTP/2.0.
 
